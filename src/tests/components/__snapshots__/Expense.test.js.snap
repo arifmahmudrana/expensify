@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expense should render correctly 1`] = `
+<div>
+  <h3>
+    <Link
+      replace={false}
+      to="/edit/1"
+    >
+      Description 1
+    </Link>
+  </h3>
+  <p>
+    $1.00
+     - 
+    7th Nov, 2018
+  </p>
+</div>
+`;
