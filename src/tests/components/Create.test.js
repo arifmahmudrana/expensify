@@ -11,7 +11,7 @@ let wrapper, onSubmit;
 
 beforeEach(() => {
   onSubmit = jest.fn();
-  wrapper = shallow(<Create addExpense={onSubmit} />);
+  wrapper = shallow(<Create storeExpense={onSubmit} />);
 });
 
 test('create page should render correctly', () => {

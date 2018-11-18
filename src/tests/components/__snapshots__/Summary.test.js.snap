@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary should render correctly 1`] = `
+<div>
+  <p>
+    Viewing 
+    1
+     expense
+     totalling 
+    $100,000.00
+  </p>
+</div>
+`;
+
+exports[`Summary should render correctly for plural version 1`] = `
+<div>
+  <p>
+    Viewing 
+    2
+     expense
+    s
+     totalling 
+    $100.10
+  </p>
+</div>
+`;

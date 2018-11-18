@@ -2,6 +2,7 @@
 
 exports[`Home should render correctly 1`] = `
 <div>
+  <Connect(Summary) />
   <Connect(Filters) />
   <Connect(ExpenseList) />
 </div>

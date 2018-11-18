@@ -1,18 +1,18 @@
 import React from 'react';
 import Form from './Form';
 import {connect} from 'react-redux';
-import {addExpense} from '../actions/expenses';
+import {storeExpense} from '../actions/expenses';
 
-export const Create = ({addExpense}) => (
+export const Create = ({storeExpense}) => (
   <div>
     <h1>Add Expense</h1>
-    <Form onSubmit={addExpense} />
+    <Form onSubmit={storeExpense} />
   </div>
 );
 
 const mapDispatchToProps = (dispatch, {history}) => ({
-  addExpense: expense => {
-    dispatch(addExpense(expense));
+  storeExpense: expense => {
+    dispatch(storeExpense(expense));
     history.replace('/');
   }
 });
