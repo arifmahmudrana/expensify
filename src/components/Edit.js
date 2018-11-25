@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {editExpense, removeExpense} from '../actions/expenses';
+import {editExpense, deleteExpense} from '../actions/expenses';
 import Form from './Form';
 
-export const Edit = ({editExpense, removeExpense, expense}) => (
+export const Edit = ({editExpense, deleteExpense, expense}) => (
   <div>
     <h1>Edit Expense</h1>
     <Form onSubmit={editExpense} {...expense} amount={expense.amount/100} />
-    <button onClick={removeExpense}>Delete</button>
+    <button onClick={deleteExpense}>Delete</button>
   </div>
 );
 
@@ -16,8 +16,8 @@ const mapDispatchToProps = (dispatch, {history, match}) => ({
     dispatch(editExpense({...expense, id: match.params.id}));
     history.replace('/');
   },
-  removeExpense() {
-    dispatch(removeExpense(match.params.id));
+  deleteExpense() {
+    dispatch(deleteExpense(match.params.id));
     history.replace('/');
   }
 });

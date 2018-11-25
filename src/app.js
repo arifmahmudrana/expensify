@@ -8,6 +8,7 @@ import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import configureStore from './store/configureStore';
 import './firebase/';
+import {fetchExpenses} from './actions/expenses';
 
 const store = configureStore();
 /* store.subscribe(() => {
@@ -33,10 +34,16 @@ setTimeout(() => store.dispatch(sortByAmount()), 3000);
 setTimeout(() => store.dispatch(setTextFilter('buy')), 3000); */
 
 ReactDOM.render(
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>
+  <p>Loading...</p>
 , document.getElementById('app'));
+
+store.dispatch(fetchExpenses()).then(() => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
+  , document.getElementById('app'));  
+});
 
 /* const Info = (props) => (
   <div>

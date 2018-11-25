@@ -10,12 +10,12 @@ const expense = {
   createdAt: moment(0)
 };
 
-let wrapper, editExpense, removeExpense;
+let wrapper, editExpense, deleteExpense;
 
 beforeEach(() => {
   editExpense = jest.fn();
-  removeExpense = jest.fn();
-  wrapper = shallow(<Edit editExpense={editExpense} removeExpense={removeExpense} expense={expense} />);
+  deleteExpense = jest.fn();
+  wrapper = shallow(<Edit editExpense={editExpense} deleteExpense={deleteExpense} expense={expense} />);
 });
 
 test('edit page should render correctly', () => {
@@ -27,7 +27,7 @@ test('should editExpense be called with correct arguments', () => {
   expect(editExpense).toHaveBeenLastCalledWith(expense);
 });
 
-test('should removeExpense be called with correct arguments', () => {
+test('should deleteExpense be called with correct arguments', () => {
   wrapper.find('button').simulate('click');
-  expect(removeExpense).toHaveBeenCalled();
+  expect(deleteExpense).toHaveBeenCalled();
 });

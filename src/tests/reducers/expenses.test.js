@@ -15,3 +15,7 @@ test('should remove expense reducers', () => {
 test('should edit expense reducers', () => {
   expect(expenses([{id: '1', amount: 12}], {type: 'EDIT_EXPENSE', expense: {id: '1', amount: 13}})).toEqual([{id: '1', amount: 13}]);
 });
+
+test('should set state for expense reducers', () => {
+  expect(expenses([{id: '1', amount: 123}], {type: 'SET_EXPENSES', expenses: [{id: '1', amount: 12}]})).toEqual([{id: '1', amount: 12}]);
+});
