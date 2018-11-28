@@ -9,7 +9,7 @@ exports[`header should render correctly 1`] = `
     activeClassName="selected"
     aria-current="page"
     exact={true}
-    to="/"
+    to="/dashboard"
   >
     Home
   </NavLink>
@@ -21,13 +21,10 @@ exports[`header should render correctly 1`] = `
   >
     Create
   </NavLink>
-  | 
-  <NavLink
-    activeClassName="selected"
-    aria-current="page"
-    to="/help"
+  <button
+    onClick={[MockFunction]}
   >
-    Help
-  </NavLink>
+    Logout
+  </button>
 </header>
 `;

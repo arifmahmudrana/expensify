@@ -23,6 +23,9 @@ const expenses = [
 ];
 
 const createMockStore = configureMockStore([thunk]);
+const uid = 'testuid';
+const state = {auth: {uid}};
+const endPoint = `users/${uid}/expenses`
 
 beforeEach(done => {
   const data = {};
@@ -30,11 +33,11 @@ beforeEach(done => {
     data[id] = {description, amount, createdAt, note};
   });
 
-  database.ref('expenses').set(data).then(() => done());
+  database.ref(endPoint).set(data).then(() => done());
 });
 
 test('should dispatch setExpenses on dispatching fetchExpenses', (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(state);
 
   store.dispatch(fetchExpenses()).then(() => {
     const actions = store.getActions();
@@ -55,7 +58,7 @@ test('actions:expenses:setExpenses', () => {
 });
 
 test('should dispatch addExpense on dispatching storeExpense', (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(state);
   const expense = expenses[0];
   delete expense.id;
 
@@ -69,7 +72,7 @@ test('should dispatch addExpense on dispatching storeExpense', (done) => {
       }
     });
 
-    return database.ref(`expenses/${actions[0].expense.id}`).once('value');
+    return database.ref(`${endPoint}/${actions[0].expense.id}`).once('value');
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(expense);
     done();
@@ -84,7 +87,7 @@ test('actions:expenses:addExpense', () => {
 });
 
 test('should dispatch editExpense on dispatching updateExpense', (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(state);
   const expense = expenses[0];
   expense.description = 'New description';
   expense.amount = '1234';
@@ -97,7 +100,7 @@ test('should dispatch editExpense on dispatching updateExpense', (done) => {
       expense
     });
 
-    return database.ref(`expenses/${actions[0].expense.id}`).once('value');
+    return database.ref(`${endPoint}/${actions[0].expense.id}`).once('value');
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(expense);
     done();
@@ -112,7 +115,7 @@ test('actions:expenses:editExpense', () => {
 });
 
 test('should dispatch removeExpense on dispatching deleteExpense', (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(state);
   const expense = expenses[0];
 
   store.dispatch(deleteExpense(expense.id)).then(() => {
@@ -122,7 +125,7 @@ test('should dispatch removeExpense on dispatching deleteExpense', (done) => {
       id: expense.id
     });
 
-    return database.ref(`expenses/${expense.id}`).once('value');
+    return database.ref(`${endPoint}/${expense.id}`).once('value');
   }).then((snapshot) => {
     expect(snapshot.val()).toBe(null);
     done();
