@@ -1,0 +1,21 @@
+.inp-group {
+  display: flex;
+  margin-bottom: $l-size;
+
+  @include mobile {
+    flex-direction: column;
+    margin-bottom: $s-size;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin: 0;
+      margin-right: $s-size;
+
+      @include mobile {
+        margin: 0;
+        margin-bottom: $s-size;
+      }
+    }
+  }
+}

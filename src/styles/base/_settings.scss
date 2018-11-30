@@ -6,3 +6,19 @@ $m-size: calc(#{$b-size} * 1rem);
 $xm-size: calc(#{$b-size} * 1.5rem);
 $l-size: calc(#{$b-size} * 2rem);
 $xl-size: calc(#{$b-size} * 3rem);
+
+// Color
+$off-white: #f7f7f7;
+$dark-gray: #333;
+$gray: #666;
+$blue: #1c88bf;
+$dark-blue: #364051;
+$inp-brd-col: #cacccd;
+$btn-second: #888;
+
+// Base line height
+$base-ln-height: 1.4;
+
+// Font size large
+$font-size-lg: 1.8rem;
+$font-size-sm: 1.4rem;

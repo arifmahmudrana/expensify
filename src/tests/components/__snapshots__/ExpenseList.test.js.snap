@@ -1,15 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`expense list should render correctly when no expenses 1`] = `
-<div>
-  <p>
-    No expenses
-  </p>
+<div
+  className="wrapper"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-item list-item--msg"
+  >
+    <span>
+      No expenses
+    </span>
+  </div>
 </div>
 `;
 
 exports[`expense list should render correctly when there is expenses 1`] = `
-<div>
+<div
+  className="wrapper"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-desktop"
+    >
+      Amount
+    </div>
+  </div>
   <Expense
     amount={100}
     createdAt={1541604692290}

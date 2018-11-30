@@ -1,0 +1,18 @@
+.page-header {
+  background: $off-white;
+  margin-bottom: $l-size;
+  padding: $xm-size 0;
+
+  &__actions {
+    margin-top: $m-size
+  }
+
+  &__title {
+    font-weight: 300;
+    margin: 0;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

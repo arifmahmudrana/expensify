@@ -5,9 +5,15 @@ import Form from './Form';
 
 export const Edit = ({updateExpense, deleteExpense, expense}) => (
   <div>
-    <h1>Edit Expense</h1>
-    <Form onSubmit={updateExpense} {...expense} amount={expense.amount/100} />
-    <button onClick={deleteExpense}>Delete</button>
+    <div className="page-header">
+      <div className="wrapper">
+        <h1>Edit Expense</h1>
+      </div>
+    </div>
+    <div className="wrapper">
+      <Form onSubmit={updateExpense} {...expense} amount={expense.amount/100} />
+      <button className="btn btn--secondary" onClick={deleteExpense}>Remove Expense</button>
+    </div>    
   </div>
 );
 

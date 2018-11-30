@@ -1,0 +1,16 @@
+.frm {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin-bottom: $m-size;
+  }
+
+  &__err {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: $m-size;
+  }
+}

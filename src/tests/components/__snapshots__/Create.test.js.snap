@@ -2,11 +2,23 @@
 
 exports[`create page should render correctly 1`] = `
 <div>
-  <h1>
-    Add Expense
-  </h1>
-  <Form
-    onSubmit={[MockFunction]}
-  />
+  <div
+    className="page-header"
+  >
+    <div
+      className="wrapper"
+    >
+      <h1>
+        Add Expense
+      </h1>
+    </div>
+  </div>
+  <div
+    className="wrapper"
+  >
+    <Form
+      onSubmit={[MockFunction]}
+    />
+  </div>
 </div>
 `;

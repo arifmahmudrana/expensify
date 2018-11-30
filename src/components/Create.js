@@ -5,8 +5,14 @@ import {storeExpense} from '../actions/expenses';
 
 export const Create = ({storeExpense}) => (
   <div>
-    <h1>Add Expense</h1>
-    <Form onSubmit={storeExpense} />
+    <div className="page-header">
+      <div className="wrapper">
+        <h1>Add Expense</h1>
+      </div>
+    </div>
+    <div className="wrapper">
+      <Form onSubmit={storeExpense} />
+    </div>
   </div>
 );
 

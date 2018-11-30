@@ -1,0 +1,16 @@
+.inp-txt {
+  border: 1px solid $inp-brd-col;
+  height: 5rem;
+  font-size: $font-size-lg;
+  font-weight: 300;
+  padding: $xs-size $s-size;
+}
+
+.select {
+  @extend .inp-txt;
+}
+
+.textarea {
+  @extend .inp-txt;
+  height: 10rem;
+}
